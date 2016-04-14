@@ -1,0 +1,168 @@
+.nav {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.nav-wrapper {
+  width: 100%;
+  display: block;
+  padding: 0;
+
+  .js & {
+    position: fixed;
+    top: 0;
+    height: 0;
+    padding: $dp 0;
+    z-index: 99;
+
+    .container {
+      height: 0;
+    }
+  }
+}
+
+  .navToggle {
+    position: relative;
+    display: none;
+    padding: 0;
+    width: $buttonSize;
+    height: $buttonSize;
+    font-size: 0;
+    border: 0;
+    background: #000;
+
+    @include mobilefirst($bp-tablet) {
+      width: $buttonSizeTablet;
+      height: $buttonSizeTablet;
+    }
+
+    .js & {
+      display: block;
+    }
+
+      span {
+        position: absolute;
+        background: #fff;
+        display: block;
+        width: $buttonSize - ($dp*2);
+        height: $dp/4;
+        margin-top: -$dp/6;
+        left: $dp;
+        @extend .transition-all;
+
+        @include mobilefirst($bp-tablet) {
+          left: $dp*1.5;
+          width: $buttonSizeTablet - ($dp*3);
+        }
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          background-color: #fff;
+          display: block;
+          left: 0;
+          width: 100%;
+          height: $dp/4;
+          @extend .transition-all;
+        }
+
+        &::before {
+          top: -$dp;
+        }
+
+        &::after {
+          top: $dp;
+        }
+      }
+
+    .active & {
+      span {
+        border-radius: 100%;
+        width: $buttonSize - ($dp*3);
+        height: $buttonSize - ($dp*3);
+        transform: translateX($dp/2) translateY(-$dp);
+        @extend .transition-all;
+
+        @include mobilefirst($bp-tablet) {
+          width: $buttonSizeTablet - ($dp*4.75);
+          height: $buttonSizeTablet - ($dp*4.75);
+          transform: translateX($dp) translateY(-$dp*1.5);
+        }
+
+        &::before,
+        &::after {
+          top: $dp/2;
+          width: $buttonSizeTablet - ($dp*4);
+          @extend .transition-all;
+
+          @include mobilefirst($bp-tablet) {
+            width: $buttonSizeTablet - ($dp*3.5);
+          }
+        }
+
+        &::before {
+          transform: translateX(-$dp/2) translateY($dp) rotate(-35deg);
+
+          @include mobilefirst($bp-tablet) {
+            transform: translateX(-$dp*0.7) translateY($dp*1.5) rotate(-35deg);
+          }
+        }
+
+        &::after {
+          transform: translateX(-$dp/2) translateY($dp) rotate(35deg);
+
+          @include mobilefirst($bp-tablet) {
+            transform: translateX(-$dp*0.7) translateY($dp*1.5) rotate(35deg);
+          }
+        }
+      }
+    }
+  }
+
+  .nav-main {
+    display: inline-block;
+    // width: 100%;
+
+      ul {
+        margin-bottom: $padding/2;
+
+        .js & {
+          background: #000;
+          display: inline-block;
+        }
+      }
+
+        li {
+          display: inline-block;
+
+          a {
+            display: block;
+            padding: $dp/2 $dp;
+
+            @include mobilefirst($bp-tablet) {
+              padding: $dp $dp*2;
+            }
+          }
+
+          .js & {
+            display: block;
+          }
+        }
+  }
+
+.hamburgerBgr {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(#000, .75);
+  z-index: 9;
+
+  &.active {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}

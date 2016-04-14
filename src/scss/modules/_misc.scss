@@ -1,0 +1,5 @@
+@include selection($selection-bg: rgba(#333, .75), $selection-c: #fff, $selection-ts: none);
+
+.transition-all {
+  transition: all 0.2s;
+}
