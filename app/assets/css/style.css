@@ -469,7 +469,8 @@ nav ul {
     width: 16px;
     height: 2px;
     margin-top: -1.33333px;
-    left: 8px; }
+    left: 8px;
+    top: 50%; }
     @media screen and (min-width: 768px) {
       .navToggle span {
         left: 12px;
