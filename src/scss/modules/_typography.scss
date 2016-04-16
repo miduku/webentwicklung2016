@@ -139,6 +139,10 @@ h5 {
 
 p {
   margin: 0 0 $padding/2;
+
+  .footer & {
+    font-size: 88.9%;
+  }
 }
 
 pre {
@@ -170,9 +174,15 @@ code {
 
 a {
   color: $color-primary;
+  text-decoration: none;
+
   &:hover,
   &:focus {
-    text-decoration: none;
+    text-decoration: underline;
+  }
+
+  .footer & {
+    color: $text-black;
   }
 }
 
