@@ -602,6 +602,13 @@ nav ul {
     margin-right: 0;
     margin-bottom: 40px !important;
     margin-left: 0; }
+  .main article {
+    margin-top: 120px; }
+
+.footer {
+  text-align: center;
+  background: #e6e6e6;
+  padding-bottom: 30px; }
 
 button {
   border-radius: 0; }
@@ -616,8 +623,8 @@ a.btn {
 .btn {
   border-radius: 0;
   background: transparent;
-  border: 1px solid #3f51b5;
-  color: #3f51b5;
+  border: 1px solid #f44336;
+  color: #f44336;
   display: block;
   height: 45px;
   outline: none;
@@ -635,24 +642,24 @@ a.btn {
       margin-bottom: 0;
       width: auto; } }
   .btn:hover, .btn:focus {
-    background: #3f51b5;
-    border-color: #3f51b5;
+    background: #f44336;
+    border-color: #f44336;
     color: #fff;
     text-decoration: none; }
   .btn:active {
-    background: #32408f;
-    border-color: #32408f; }
+    background: #ea1c0d;
+    border-color: #ea1c0d; }
   .btn.btn-primary {
-    background-color: #3f51b5;
-    border-color: #3f51b5;
+    background-color: #f44336;
+    border-color: #f44336;
     color: #fff; }
     .btn.btn-primary:hover, .btn.btn-primary:focus {
-      background: #3849a2;
-      border-color: #3849a2;
+      background: #f32c1e;
+      border-color: #f32c1e;
       color: #fff; }
     .btn.btn-primary:active {
-      background: #32408f;
-      border-color: #32408f;
+      background: #ea1c0d;
+      border-color: #ea1c0d;
       color: #fff; }
   .btn.btn-lg {
     font-size: 1.4em;
@@ -666,12 +673,12 @@ a.btn {
     box-shadow: none;
     background: transparent;
     border: 0;
-    color: #3f51b5;
+    color: #f44336;
     text-shadow: none;
     text-transform: none; }
     .btn.btn-link:hover, .btn.btn-link:focus {
       background: transparent;
-      color: #3f51b5;
+      color: #f44336;
       text-decoration: underline; }
 
 .list-unstyled {
@@ -710,7 +717,7 @@ blockquote {
     vertical-align: baseline;
     position: absolute;
     font-size: 3.5em;
-    color: #3f51b5;
+    color: #f44336;
     left: -5px;
     top: -.4em;
     opacity: .5;
@@ -793,6 +800,8 @@ h5 {
 
 p {
   margin: 0 0 20px; }
+  .footer p {
+    font-size: 88.9%; }
 
 pre {
   border-radius: 4px;
@@ -820,9 +829,12 @@ code {
   vertical-align: text-bottom; }
 
 a {
-  color: #3f51b5; }
+  color: #f44336;
+  text-decoration: none; }
   a:hover, a:focus {
-    text-decoration: none; }
+    text-decoration: underline; }
+  .footer a {
+    color: #333; }
 
 hr {
   border: 0;
@@ -858,7 +870,7 @@ figcaption {
 table {
   width: 100%; }
   table tr:focus, table tr:hover {
-    background: #e4e7f6; }
+    background: white; }
   table th,
   table td {
     padding: 5px;
