@@ -614,11 +614,11 @@ button {
   border-radius: 0; }
 
 a.btn {
-  padding-top: 9px; }
+  padding-top: 5.5px; }
   a.btn.btn-sm {
-    padding-top: 3px; }
+    padding-top: 1px; }
   a.btn.btn-lg {
-    padding-top: 15px; }
+    padding-top: 10px; }
 
 .btn {
   border-radius: 0;
@@ -822,7 +822,7 @@ code {
   border: 1px solid #c4c4c4;
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
   font-size: .813em;
-  line-height: 20px;
+  line-height: 1.62;
   padding: 2px 5px;
   word-break: break-all;
   word-wrap: break-word;
