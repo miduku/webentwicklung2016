@@ -2,20 +2,38 @@
   padding: $padding 0;
 
   time {
-    margin: -1.5em 0 $text-margin .25em;
+    margin: 0 0 0 .25em;
     display: block;
 
     .fa {
       margin-right: .25em;
     }
   }
-}
 
-article {
-  @extend .group;
-}
+  img {
+    margin-bottom: $padding/4;
 
-  .txt {
-    @extend .offset2;
-    @extend .span8;
+    @include mobilefirst($bp-tablet) {
+      margin-bottom: $padding/2;
+    }
   }
+
+  figure {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: $padding !important;
+    margin-left: 0;
+    @extend .span12;
+  }
+
+  article {
+    @extend .group;
+  }
+
+    .txt {
+      @extend .offset2;
+      @extend .span8;
+
+    }
+
+}

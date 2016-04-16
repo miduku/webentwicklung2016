@@ -1,6 +1,6 @@
-# FastShell
-# https://HosseinKarami.github.io/fastshell
-# @author Hossein Karami
+# webentwicklung2016
+# http://webentwicklung16.dustinkummer.com/
+# @author Dustin Kummer
 
 
 ## Node.js
@@ -38,3 +38,14 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
+
+
+## SublimeText
+*.sublime-workspace
+
+## phpintel
+.phpintel
+
+
+## config
+config

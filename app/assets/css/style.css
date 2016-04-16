@@ -1,10 +1,18 @@
 @charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,700|Merriweather:400,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700|Merriweather:400,400italic,700,700italic);
 @media screen and (min-width: 480px) {
   body {
     overflow-x: hidden; } }
 
+@media screen and (max-width: 480px) {
+  body {
+    overflow-x: hidden; } }
+
 @media screen and (min-width: 768px) {
+  body {
+    overflow-x: auto; } }
+
+@media screen and (max-width: 768px) {
   body {
     overflow-x: auto; } }
 
@@ -32,6 +40,9 @@ body {
 nav ul {
   margin: 0;
   padding: 0; }
+
+img {
+  width: 100%; }
 
 .kellumIR {
   text-indent: 100%;
@@ -419,7 +430,7 @@ th {
   .header a {
     color: #fff; }
 
-.nav ul {
+nav ul {
   list-style: none;
   padding: 0; }
 
@@ -515,7 +526,9 @@ th {
                   transform: translateX(-5.6px) translateY(12px) rotate(35deg); } }
 
 .nav-main {
-  display: inline-block; }
+  display: block;
+  position: relative;
+  height: 0; }
   .nav-main ul {
     margin-bottom: 20px; }
     .js .nav-main ul {
@@ -529,8 +542,36 @@ th {
       @media screen and (min-width: 768px) {
         .nav-main li a {
           padding: 8px 16px; } }
+    .nav-main li.active a {
+      text-decoration: underline; }
     .js .nav-main li {
       display: block; }
+
+.nav-title {
+  position: absolute;
+  display: none;
+  background: #000;
+  padding: 0 16px 0 8px;
+  vertical-align: bottom;
+  line-height: 32px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: 700;
+  top: 0;
+  left: 32px;
+  visibility: hidden; }
+  @media screen and (max-width: 480px) {
+    .nav-title {
+      display: none !important; } }
+  @media screen and (min-width: 480px) {
+    .nav-title {
+      display: inline-block; } }
+  @media screen and (min-width: 768px) {
+    .nav-title {
+      line-height: 48px;
+      left: 48px; } }
+  .nav-title.visible {
+    visibility: visible; }
 
 .hamburgerBgr {
   position: fixed;
@@ -546,10 +587,20 @@ th {
 .main {
   padding: 40px 0; }
   .main time {
-    margin: -1.5em 0 25px 0.25em;
+    margin: 0 0 0 .25em;
     display: block; }
     .main time .fa {
       margin-right: .25em; }
+  .main img {
+    margin-bottom: 10px; }
+    @media screen and (min-width: 768px) {
+      .main img {
+        margin-bottom: 20px; } }
+  .main figure {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 40px !important;
+    margin-left: 0; }
 
 a.btn {
   padding-top: 9px; }
@@ -632,16 +683,16 @@ blockquote {
 body,
 button,
 input {
-  font-size: 87.5%;
+  font-size: 100%;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.8;
   color: #333; }
   @media screen and (min-width: 768px) {
     body,
     button,
     input {
-      font-size: 100%; } }
+      font-size: 112.5%; } }
 
 blockquote {
   font-size: 1.4em;
@@ -693,23 +744,29 @@ h5 {
   h5 {
     margin-top: 0;
     text-align: center; }
-  article:first-child h1, article:first-child
-  h2, article:first-child
-  h3, article:first-child
-  h4, article:first-child
+  article:first-child h1:first-child, article:first-child
+  h2:first-child, article:first-child
+  h3:first-child, article:first-child
+  h4:first-child, article:first-child
+  h5:first-child {
+    margin-top: 0; }
+  time + h1, time +
+  h2, time +
+  h3, time +
+  h4, time +
   h5 {
     margin-top: 0; }
 
 h1 {
-  font-size: 3.5em;
+  font-size: 3.25em;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   margin: 60px 0 25px; }
 
 h2 {
   font-size: 2.625em;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   margin: 60px 0 25px; }
 
 h3 {
@@ -721,13 +778,13 @@ h3 {
 h4 {
   font-size: 1.125em;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   margin: 60px 0 25px; }
 
 h5 {
   font-size: 1em;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 700;
   margin: 60px 0 25px; }
 
 p {
@@ -775,6 +832,12 @@ time {
 .nav-main a {
   text-decoration: none; }
 
+figcaption {
+  font-size: 88.9%;
+  color: #737373;
+  text-align: center;
+  font-style: italic; }
+
 ::-moz-selection {
   background: rgba(51, 51, 51, 0.75);
   color: #fff;
@@ -813,14 +876,15 @@ table {
 .span6,
 .span7,
 .span8,
-.txt,
+.main .txt,
 .span9,
 .span10,
 .span11,
-.span12 {
+.span12,
+.main figure {
   margin-bottom: 20px; }
 
-.group, article {
+.group, .main article {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column; }
@@ -828,7 +892,7 @@ table {
 @media screen and (min-width: 768px) {
   .container {
     padding: 0 40px; }
-  .group, article {
+  .group, .main article {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -850,11 +914,12 @@ table {
   .span6,
   .span7,
   .span8,
-  .txt,
+  .main .txt,
   .span9,
   .span10,
   .span11,
-  .span12 {
+  .span12,
+  .main figure {
     -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto; }
@@ -872,7 +937,7 @@ table {
             flex-basis: 14.53897%;
     margin-left: 2.1277%;
     max-width: 14.53897%; }
-  .offset2, .txt {
+  .offset2, .main .txt {
     margin-left: 18.79437% !important; }
   .span3 {
     -webkit-flex-basis: 22.8723%;
@@ -914,7 +979,7 @@ table {
     max-width: 56.20563%; }
   .offset7 {
     margin-left: 60.46103% !important; }
-  .span8, .txt {
+  .span8, .main .txt {
     -webkit-flex-basis: 64.53897%;
         -ms-flex-preferred-size: 64.53897%;
             flex-basis: 64.53897%;
@@ -946,7 +1011,7 @@ table {
     max-width: 89.53897%; }
   .offset11 {
     margin-left: 93.79437% !important; }
-  .span12 {
+  .span12, .main figure {
     -webkit-flex-basis: 97.8723%;
         -ms-flex-preferred-size: 97.8723%;
             flex-basis: 97.8723%;

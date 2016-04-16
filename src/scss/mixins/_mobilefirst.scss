@@ -14,12 +14,26 @@ $bp-desktop: 1024px;
   }
 }
 
+@mixin mobilelast($res) {
+  @media screen and (max-width: $res) {
+    @content;
+  }
+}
+
 body {
   @include mobilefirst($bp-mobile) {
     overflow-x: hidden;
   }
 
+  @include mobilelast($bp-mobile) {
+    overflow-x: hidden;
+  }
+
   @include mobilefirst($bp-tablet) {
+    overflow-x: auto;
+  }
+
+  @include mobilelast($bp-tablet) {
     overflow-x: auto;
   }
 }

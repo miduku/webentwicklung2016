@@ -3,7 +3,7 @@
 //----------------------------------*/
 
 /* Import fonts from Google */
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,700|Merriweather:400,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700|Merriweather:400,400italic,700,700italic);
 
 // @font-face {
 //   font-family: 'Font-Name';
@@ -26,14 +26,17 @@ blockquote {
 body,
 button,
 input {
-  font-size: 87.5%; // 14px (mobile)
+  font-size: 100%; // 16px (mobile)
+  // font-size: 87.5%; // 14px (mobile)
   font-style: normal;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.8;
+  // line-height: 1.6;
   color: $text-black;
 
   @include mobilefirst($bp-tablet) {
-    font-size: 100%; // 16px (tablet, desktop)
+    font-size: 112.5%; // 18px (tablet, desktop)
+    // font-size: 100%; // 16px (tablet, desktop)
   }
 }
 
@@ -88,23 +91,28 @@ h5 {
     margin-top: 0;
     text-align: center
   }
+  &:first-child {
+    article:first-child & {
+      margin-top: 0;
+    }
+  }
 
-  article:first-child & {
+  time + & {
     margin-top: 0;
   }
 }
 
 h1 {
-  font-size: 3.5em;
+  font-size: 3.25em;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   margin: $padding+$padding/2 0 $text-margin;
 }
 
 h2 {
   font-size: 2.625em;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   margin: $padding+$padding/2 0 $text-margin;
 }
 
@@ -118,14 +126,14 @@ h3 {
 h4 {
   font-size: 1.125em;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   margin: $padding+$padding/2 0 $text-margin;
 }
 
 h5 {
   font-size: 1em;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 700;
   margin: $padding+$padding/2 0 $text-margin;
 }
 
@@ -183,4 +191,11 @@ time {
   a {
     text-decoration: none;
   }
+}
+
+figcaption {
+  font-size: 88.9%;
+  color: lighten($text-black, 25);
+  text-align: center;
+  font-style: italic;
 }
