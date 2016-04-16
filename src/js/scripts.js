@@ -18,6 +18,7 @@
       .on('click', '.navToggle', function(event) {
         event.preventDefault();
 
+        // if active, close nav and shot nav-title
         if ($('.nav-main').hasClass('active')) {
           $('.nav-main')
             .removeClass('active')
@@ -33,6 +34,7 @@
 
           $('.hamburgerBgr').removeClass('active');
         }
+        // if not active, open nav and close nav-title
         else {
           $('.nav-main')
             .addClass('active')
@@ -45,6 +47,7 @@
           $('.hamburgerBgr').addClass('active');
         }
       })
+      // close nav if click outside
       .on('click', '.hamburgerBgr', function() {
         if ($('.nav-main').hasClass('active')) {
           $(this).removeClass('active');
@@ -52,7 +55,14 @@
         $('.nav-main')
           .removeClass('active')
           .children('ul')
-          .hide('fast');
+          .slideUp('fast')
+          .siblings('.nav-title')
+          // .addClass('visible')
+          .show('fast');
+
+          if ($(window).scrollTop() > $('.header').outerHeight()) {
+            $('.nav-title').addClass('visible');
+          }
         }
       });
 
