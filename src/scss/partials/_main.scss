@@ -29,6 +29,10 @@
   article {
     margin-top: $padding*3;
     @extend .group;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
     .txt {

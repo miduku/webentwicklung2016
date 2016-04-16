@@ -604,6 +604,8 @@ nav ul {
     margin-left: 0; }
   .main article {
     margin-top: 120px; }
+    .main article:first-child {
+      margin-top: 0; }
 
 .footer {
   text-align: center;
