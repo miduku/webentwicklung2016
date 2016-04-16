@@ -50,6 +50,7 @@ nav {
         height: $dp/4;
         margin-top: -$dp/6;
         left: $dp;
+        top: 50%;
         @extend .transition-all;
 
         @include mobilefirst($bp-tablet) {
