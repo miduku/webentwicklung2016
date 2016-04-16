@@ -15,7 +15,7 @@
     $('body').prepend('<div class="hamburgerBgr"></div>');
 
     // create hamburger menu .navToggle
-    $('.nav-main').prepend('<button class="navToggle"><span></span></button><span class="nav-title"></span>');
+    $('.nav-main').prepend('<a href="#" class="navToggle"><span></span></a><span class="nav-title"></span>');
 
     // clone the text from the active menü to the nav-title
     $('.nav-title').append($('.nav-main li.active').text());
