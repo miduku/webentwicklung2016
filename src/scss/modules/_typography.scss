@@ -3,7 +3,7 @@
 //----------------------------------*/
 
 /* Import fonts from Google */
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700|Merriweather:400,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700|Merriweather:400,400italic,700,700italic);
 
 // @font-face {
 //   font-family: 'Font-Name';
@@ -76,7 +76,7 @@ h4,
 h5,
 time,
 .nav-main {
-  font-family: "Titillium Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 h1,
@@ -84,7 +84,7 @@ h2,
 h3,
 h4,
 h5 {
-  line-height: 1;
+  line-height: 1.2;
   hyphens: auto;
 
   .header & {
