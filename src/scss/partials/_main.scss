@@ -27,6 +27,7 @@
   }
 
   article {
+    margin-top: $padding*3;
     @extend .group;
   }
 
