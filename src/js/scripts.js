@@ -14,6 +14,7 @@
 
     // toggle
     $('.nav-main > ul').hide();
+    $('.nav-title').hide();
     $('body')
       .on('click', '.navToggle', function(event) {
         event.preventDefault();
@@ -85,7 +86,7 @@
       }
 
 
-      console.log(isVisible);
+      // console.log(isVisible);
     });
   });
 
