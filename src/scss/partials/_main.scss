@@ -18,16 +18,14 @@
     }
   }
 
-  figure {
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: $padding !important;
-    margin-left: 0;
-    @extend .span12;
-  }
 
   article {
-    @extend .group;
+    margin-top: $padding*3;
+    // @extend .group;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
     .txt {
@@ -37,3 +35,10 @@
     }
 
 }
+  figure {
+    margin-top: $padding;
+    margin-right: 0;
+    margin-bottom: $padding !important;
+    margin-left: 0;
+    // @extend .span12;
+  }

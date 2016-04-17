@@ -411,13 +411,15 @@ th {
   padding: 20px 0 40px;
   min-height: 100%;
   height: 100%; }
+  @media screen and (min-width: 768px) {
+    .header {
+      min-height: 35%;
+      height: 50%; } }
   .js .header {
     padding: 48px 0 40px; }
     @media screen and (min-width: 768px) {
       .js .header {
-        padding: 64px 0 40px;
-        min-height: 35%;
-        height: 50%; } }
+        padding: 64px 0 40px; } }
   .header .title-wrapper {
     min-height: 100%;
     height: 100%;
@@ -597,34 +599,43 @@ nav ul {
     @media screen and (min-width: 768px) {
       .main img {
         margin-bottom: 20px; } }
-  .main figure {
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 40px !important;
-    margin-left: 0; }
+  .main article {
+    margin-top: 120px; }
+    .main article:first-child {
+      margin-top: 0; }
+
+figure {
+  margin-top: 40px;
+  margin-right: 0;
+  margin-bottom: 40px !important;
+  margin-left: 0; }
+
+.footer {
+  text-align: center;
+  background: #e6e6e6;
+  padding: 40px 0 50px; }
 
 button {
   border-radius: 0; }
 
 a.btn {
-  padding-top: 9px; }
+  padding-top: 5.5px; }
   a.btn.btn-sm {
-    padding-top: 3px; }
+    padding-top: 1px; }
   a.btn.btn-lg {
-    padding-top: 15px; }
+    padding-top: 10px; }
 
 .btn {
   border-radius: 0;
   background: transparent;
-  border: 1px solid #3f51b5;
-  color: #3f51b5;
+  border: 1px solid #f44336;
+  color: #f44336;
   display: block;
   height: 45px;
   outline: none;
   padding: 0 25px;
   text-align: center;
   text-decoration: none;
-  text-transform: capitalize;
   margin-bottom: 10px;
   width: 100%;
   cursor: pointer;
@@ -632,27 +643,27 @@ a.btn {
   @media screen and (min-width: 768px) {
     .btn {
       display: inline-block;
-      margin-bottom: 0;
+      margin-bottom: 10px;
       width: auto; } }
   .btn:hover, .btn:focus {
-    background: #3f51b5;
-    border-color: #3f51b5;
+    background: #f44336;
+    border-color: #f44336;
     color: #fff;
     text-decoration: none; }
   .btn:active {
-    background: #32408f;
-    border-color: #32408f; }
+    background: #ea1c0d;
+    border-color: #ea1c0d; }
   .btn.btn-primary {
-    background-color: #3f51b5;
-    border-color: #3f51b5;
+    background-color: #f44336;
+    border-color: #f44336;
     color: #fff; }
     .btn.btn-primary:hover, .btn.btn-primary:focus {
-      background: #3849a2;
-      border-color: #3849a2;
+      background: #f32c1e;
+      border-color: #f32c1e;
       color: #fff; }
     .btn.btn-primary:active {
-      background: #32408f;
-      border-color: #32408f;
+      background: #ea1c0d;
+      border-color: #ea1c0d;
       color: #fff; }
   .btn.btn-lg {
     font-size: 1.4em;
@@ -666,12 +677,12 @@ a.btn {
     box-shadow: none;
     background: transparent;
     border: 0;
-    color: #3f51b5;
+    color: #f44336;
     text-shadow: none;
     text-transform: none; }
     .btn.btn-link:hover, .btn.btn-link:focus {
       background: transparent;
-      color: #3f51b5;
+      color: #f44336;
       text-decoration: underline; }
 
 .list-unstyled {
@@ -710,7 +721,7 @@ blockquote {
     vertical-align: baseline;
     position: absolute;
     font-size: 3.5em;
-    color: #3f51b5;
+    color: #f44336;
     left: -5px;
     top: -.4em;
     opacity: .5;
@@ -793,6 +804,8 @@ h5 {
 
 p {
   margin: 0 0 20px; }
+  .footer p {
+    font-size: 88.9%; }
 
 pre {
   border-radius: 4px;
@@ -813,16 +826,19 @@ code {
   border: 1px solid #c4c4c4;
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
   font-size: .813em;
-  line-height: 20px;
+  line-height: 1.62;
   padding: 2px 5px;
   word-break: break-all;
   word-wrap: break-word;
   vertical-align: text-bottom; }
 
 a {
-  color: #3f51b5; }
+  color: #f44336;
+  text-decoration: none; }
   a:hover, a:focus {
-    text-decoration: none; }
+    text-decoration: underline; }
+  .footer a {
+    color: #333; }
 
 hr {
   border: 0;
@@ -858,7 +874,7 @@ figcaption {
 table {
   width: 100%; }
   table tr:focus, table tr:hover {
-    background: #e4e7f6; }
+    background: white; }
   table th,
   table td {
     padding: 5px;
@@ -884,11 +900,10 @@ table {
 .span9,
 .span10,
 .span11,
-.span12,
-.main figure {
+.span12 {
   margin-bottom: 20px; }
 
-.group, .main article {
+.group {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column; }
@@ -896,7 +911,7 @@ table {
 @media screen and (min-width: 768px) {
   .container {
     padding: 0 40px; }
-  .group, .main article {
+  .group {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -922,8 +937,7 @@ table {
   .span9,
   .span10,
   .span11,
-  .span12,
-  .main figure {
+  .span12 {
     -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto; }
@@ -1015,7 +1029,7 @@ table {
     max-width: 89.53897%; }
   .offset11 {
     margin-left: 93.79437% !important; }
-  .span12, .main figure {
+  .span12 {
     -webkit-flex-basis: 97.8723%;
         -ms-flex-preferred-size: 97.8723%;
             flex-basis: 97.8723%;
