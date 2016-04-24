@@ -588,7 +588,7 @@ nav ul {
     display: block; }
 
 .main {
-  padding: 40px 0; }
+  padding: 80px 0; }
   .main time {
     margin: 0 0 0 .25em;
     display: block; }
@@ -710,7 +710,7 @@ input {
       font-size: 112.5%; } }
 
 blockquote {
-  font-size: 1.4em;
+  font-size: 1em;
   font-style: italic;
   font-weight: 400;
   margin: 0 0 20px;
@@ -759,10 +759,10 @@ h5 {
   h5 {
     margin-top: 0;
     text-align: center; }
-  article:first-child h1:first-child, article:first-child
-  h2:first-child, article:first-child
-  h3:first-child, article:first-child
-  h4:first-child, article:first-child
+  article h1:first-child, article
+  h2:first-child, article
+  h3:first-child, article
+  h4:first-child, article
   h5:first-child {
     margin-top: 0; }
   time + h1, time +
