@@ -8,7 +8,7 @@
     <meta name="description" content="Projekt-Logbuch für den Kurs 'Einführung in die Webentwicklung' (Sommersemester 2016) an der Fachhochschule Potsdam">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="author" content="Dustin Kummer">
-    <link rel="author" href="https://medium.com/@abbymnorman">
+    <link rel="author" href="https://github.com/miduku/">
 
     <link href="assets/css/style.min.css" rel="stylesheet">
 
@@ -41,6 +41,42 @@
     <main class="main" role="main">
       <div class="container">
 
+        <!-- ARTICLE -->
+        <article>
+          <div class="txt">
+            <time datetime="2016-04-24"><i class="fa fa-calendar-o" aria-hidden="true"></i>24.04.2016</time>
+            <h2>Cars and Conditionals</h2>
+          </div>
+
+          <div class="txt">
+            <h3>Conditionals</h3>
+            <p>Nach einigen Übungen aus diesem <a href="http://bjc.berkeley.edu/bjc-r/topic/topic.html?topic=berkeley_bjc/intro_pair/3-conditionals.topic&course=cs10_fa15.html&noassignment&noreading&novideo" target="_blank">Kurs</a> und einem jetzt etwas besseren Verständniss von Snap! habe ich mich an die Aufgabe gewagt einen bestehenden Algorithmus, welcher ein Auto eine Strecke zurücklegen muss, zu verbessern.</p>
+
+            <p><a class="btn" href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=miduku&ProjectName=conditionals" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i>conditionals</a></p>
+
+            <h3>Auto fahren</h3>
+            <blockquote>
+              <p> Ich habe den Algorithmus <a href="http://snap.mgrf.de/#open:./webdeck/matthias/snap/car4.xml" target="_blank">in diesem Projekt</a> implementiert. Verbessert das Programm so, dass die zurückgelegte Strecke minimal wird. Die beste Lösung küren wir nächste Woche. ;) Hier findet ihr die Strecke als <a href="http://snap.mgrf.de/webdeck/matthias/snap/Strecke.png" target="_blank">png</a>, als <a href="http://snap.mgrf.de/webdeck/matthias/snap/Strecke.svg" target="_blank">svg</a> und das <a href="http://snap.mgrf.de/webdeck/matthias/snap/Car.png" target="_blank">Auto</a>.</p>
+              <em>- Käpt'n</em>
+            </blockquote>
+
+            <p>Hierfür habe ich mich von selbstfahrenden Autos inspirieren lassen die mit Sensoren wie <a href="https://de.wikipedia.org/wiki/Lidar" target="_blank">LiDAR</a> und einem Reglersystem autonom fahren können.</p>
+            <p>Ich habe dementsprechend für jeweils die rechte und linke Seite des Autos einen Sensor hinzugefügt die die Distanz zum Straßenrand messen. Anhand dieser Messungen regelt der <a href="https://de.wikipedia.org/wiki/Regler#PD-Regler" target="_blank">PID-Regler</a> wie das Auto lenken soll. Hier wird 'I' nicht verwendet, da ein PD-Regler ausreichend ist.</p>
+          </div>
+
+          <figure>
+            <a href="assets/img/snap-car.png"><img src="assets/img/snap-car.png" alt=""></a>
+            <figcaption>Selbstfahrendes Auto mit Sensoren</figcaption>
+          </figure>
+
+          <div class="txt">
+            <p>Es war überhaupt nicht einfach den Regler zu programmieren und musste mir einige Beispiele die in <a href="https://github.com/Philmod/node-pid-controller/blob/master/lib/index.js" target="_blank">JavaScript geschrieben</a> wurden anschauen um es in Snap! umzusetzen.</p>
+            <p>Der fertige und relativ rechenintensive Algorithmus findet ihr hier. Wundert euch nicht warum es langsam läuft oder aufeinmal der Browser abstürzt :P :</p>
+            <p><a class="btn" href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=miduku&ProjectName=car" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i>car</a></p>
+          </div>
+        </article>
+
+        <!-- ARTICLE -->
         <article>
           <div class="txt">
             <time datetime="2016-04-17"><i class="fa fa-calendar-o" aria-hidden="true"></i>17.04.2016</time>
@@ -59,7 +95,7 @@
 
           <div class="txt">
             <p>Hierfür habe ich versucht so wenig wie möglich vom Code auf die anderen drei Sprites zu duplizieren und die Position dieser eher vom ersten Sprite abhängig zu machen.</p>
-            <p>Mit der <code>Leertaste</code> fängt man den Code an und man kann mit der Maus auf dem Canvas Zeichnen.</p>
+            <p>Mit der <code>Leertaste</code> fängt man alles an und man kann mit der Maus auf dem Canvas Zeichnen.</p>
             <p>Mit <code>y</code> pausiert man alles, mit <code>x</code> wird alles zurückgesetzt.</p>
             <p>
               <a class="btn" href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=miduku&ProjectName=Kaleidoscope" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i>kaleidoskop</a>
@@ -115,6 +151,7 @@
             <br><a href="https://fhp.incom.org/profil/6531" target="_blank">Dozent: Matthias Graf</a></p>
             <p><a href="https://fhp.incom.org/profil/7137" target="_blank">Dustin Kummer</a>
             <br>Sommer 2016</p>
+            <a href="https://github.com/miduku/webentwicklung2016" target="_blank"><p>Sourcecode on <i class="fa fa-github"></i> Github</p></a>
           </div>
         </div>
       </div>

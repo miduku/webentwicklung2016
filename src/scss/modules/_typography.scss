@@ -41,7 +41,7 @@ input {
 }
 
 blockquote {
-  font-size: 1.4em;
+  font-size: 1em;
   font-style: italic;
   font-weight: 400;
   margin: 0 0 $padding/2;
@@ -92,7 +92,7 @@ h5 {
     text-align: center
   }
   &:first-child {
-    article:first-child & {
+    article & {
       margin-top: 0;
     }
   }
