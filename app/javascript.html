@@ -1,0 +1,333 @@
+<!doctype html>
+<html class="no-js" lang="de">
+  <head>
+    <meta charset="utf-8">
+    <title>Einführung in die Webentwicklung 2016 - Javascript</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Projekt-Logbuch für den Kurs 'Einführung in die Webentwicklung' (Sommersemester 2016) an der Fachhochschule Potsdam">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="author" content="Dustin Kummer">
+    <link rel="author" href="https://github.com/miduku/">
+
+    <link href="assets/css/style.min.css" rel="stylesheet">
+
+    <script src="assets/components/modernizr/modernizr.js"></script>
+    <!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+  </head>
+  <body>
+
+    <header class="header" role="banner">
+      <div class="nav-wrapper">
+        <div class="container">
+          <nav class="nav nav-main" role="navigation">
+            <ul>
+              <li><a href="index.html">00. Einführung in die Webentwicklung 2016</a></li>
+              <li><a href="snap.html">01. Oh Snap!</a></li>
+              <li class="active"><a href="javascript.html">02. Javascript Ahoi</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="title-wrapper">
+        <div class="container">
+          <h1><span class="chapter-nr">02.</span> Javascript Ahoi</h1>
+
+          <span class="title-info">Jetzt geht’s los mit Javascipt</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main" role="main">
+      <div class="container">
+
+        <!-- ARTICLE -->
+        <article>
+          <div class="txt">
+            <time datetime="2016-05-19"><i class="fa fa-calendar-o" aria-hidden="true"></i>19.05.2016</time>
+            <h2>OMG! JS!</h2>
+          </div>
+
+          <div class="txt">
+            <p>Nach dem vielen Hin- und Hergeschiebe mit Snap! war es diese Woche an der Zeit uns an Javascript zu wagen. Hierfür haben wir das Buch <a href="http://eloquentjavascript.net/" target="_blank">Eloquent Javascript</a>, welches auch online zu lesen gibt, zu Hilfe genommen und uns durch die ersten drei Kapitel durchgekämpft.</p>
+
+            <h3>Käpt’n, die strukturälle Integrität des Schiffs liegt bei... 100 Prozent.</h3>
+            <p>Ab dem zweiten Kapitel <a href="http://eloquentjavascript.net/02_program_structure.html" target="_blank">„Program Structure“</a> mussten wir dann zum Schluss verschiedene Übungsaufgaben bewältigen:</p>
+
+            <h4>Looping a triangle</h4>
+            <p>Hier war es die Aufgabe mit loops zu programmieren. Es sollte ein <a href="http://eloquentjavascript.net/02_program_structure.html#h_umoXp9u0e7" target="_blank">siebenstöckiges Dreieck</a>, bestehend aus Rauten (#), in der Konsole ausgegeben werden. Hierfür habe ich diesen Code geschreiben:</p>
+            <pre>
+&lt;script type="text/javascript" charset="utf-8"&gt;
+
+  var char = '#';
+  while (char.length <= 7) {
+    console.log(char);
+    char += '#';
+  }
+
+&lt;/script&gt;
+            </pre>
+            <ol>
+              <li>Während die Länge (hier: Anzahl der Ziffern) der Stringvariable <code>char</code> kleiner gleich 7 ist gib diese Variable in der Konsole aus und addiere daraufhin eine weitere Raute in dieselbe Variable.</li>
+              <li>Wiederhole diesen Vorgang solange die Variablenlänge kleiner gleich 7 ist.</li>
+            </ol>
+            <p><a class="btn" href="assets/ej/ej-ch02_looping-a-triangle.html"><i class="fa fa-code" aria-hidden="true"></i>ej-ch02_looping-a-triangle.html</a></p>
+
+
+            <h4>FizzBuzz</h4>
+            <p>Bei der <a href="http://eloquentjavascript.net/02_program_structure.html#h_rebKE3gdjV" target="_blank">zweiten Aufgabe</a> sollen die Zahlen 1 bis 100 in der Konsole ausgegeben werden.</p>
+            <p>Für Zahlen die jedoch durch 3 Teilbar sind soll stattdessen <code>'Fizz'</code> und bei Zahlen die durch 5 Teilbar sind (und nicht 3) <code>'Buzz'</code> ausgegeben werden.</p>
+            <p>Für Zahlen die wiederrum durch 3 UND 5 Teilbar sind soll <code>'FizzBuzz'</code> ausgegeben werden.</p>
+            <pre>
+&lt;script type="text/javascript" charset="utf-8"&gt;
+
+    var result;
+
+    for (var i = 1; i <= 100; i++) {
+      if (i % 3 === 0 && i % 5 === 0) {
+        result = 'FizzBuzz';
+      }
+      else if (i % 3 === 0) {
+        result = 'Fizz';
+      }
+      else if (i % 5 === 0) {
+        result = 'Buzz';
+      }
+      else {
+        result = i;
+      }
+      console.log(result);
+    }
+
+&lt;/script&gt;
+            </pre>
+            <ol>
+              <li>Ich erstelle eine leere Variable und nenne es <code>result</code>.</li>
+              <li>Mit einer <code>for</code>-Schleife wiederhole ich hier die <code>if</code>-Abfragen 100 mal: Ich fange bei 1 an (<code>var i = 1;</code>), definiere, dass die Wiederholung solange fortgeführt wird wenn <code>i</code> kleiner gleich 100 ist (<code>i <= 100;</code>), und erhöhe nach jeder Wiederholung mit <code>i++</code> die Variable <code>i</code> den Wert um 1:
+                <ol>
+                  <li>In der ersten <code>if</code>-Abfrage prüfe ich ob <code>i</code> durch 3 ohne Restbetrag UND 5 ohne Restbetrag teilbar sind. Falls dem so ist, wird <code>'FizzBuzz'</code> in <code>result</code> gespeichert.</li>
+                  <li>Falls die davorige Abfrage nicht stattfindet, prüfe ob <code>i</code> durch 3 ohne Restbetrag teilbar ist um dementsprechend <code>'Fizz'</code> in <code>result</code> zu speichern.</li>
+                  <li>Falls die davorige Abfrage nicht stattfindet, prüfe ob <code>i</code> durch 5 ohne Restbetrag teilbar ist um dementsprechend <code>'Buzz'</code> in <code>result</code> zu speichern.</li>
+                  <li>Falls alle davorigen Abfragen nicht stattfinden, wird die Zahl aus <code>i</code> in <code>result</code> gespeichern.</li>
+                  <li>Gib den Wert von <code>result</code> in der Konsole aus.</li>
+                </ol>
+              </li>
+            </ol>
+            <p><a class="btn" href="assets/ej/ej-ch02_fizzbuzz.html"><i class="fa fa-code" aria-hidden="true"></i>ej-ch02_fizzbuzz.html</a></p>
+
+
+            <h4>Chess board</h4>
+            <p>Die dritte und letzte Übung des zweiten Kapitels besteht darin ein <a href="http://eloquentjavascript.net/02_program_structure.html#h_5Hz2kiaaXp" target="_blank">Schachbrettmuster</a> aus Rauten in der Konsole auszugeben:</p>
+            <pre>
+&lt;script type="text/javascript" charset="utf-8"&gt;
+
+    var result = '';
+    var size = 8;
+
+    for (var i = 1; i <= size; i++) {
+      // row B
+      if (i % 2 === 0) {
+        for (var j = 1; j <= size; j++) {
+          if (j % 2 === 0) {
+            result += ' ';
+          }
+          else {
+            result += '#';
+          }
+        }
+        // new line
+        result += '\n';
+      }
+
+      // row A
+      else {
+        for (var j = 1; j <= size; j++) {
+          if (j % 2 === 0) {
+            result += '#';
+          }
+          else {
+            result += ' ';
+          }
+        }
+        // new line
+        result += '\n';
+      }
+    } // END for
+
+    console.log(result);
+
+&lt;/script&gt;
+            </pre>
+            <ol>
+              <li>Erstelle eine leere Stringvariable <code>result</code> und eine Variable <code>size</code> mit einer Zahl für die Rastergröße des Schachbretts. Bei der Zahl 8 soll ein 8×8 Raster entstehen.</li>
+              <li>Erstelle die Reihen:
+              <br>Mit einer <code>for</code>-Schleife wird so oft wie <code>size</code> angibt (also 8) eine <code>if</code>-Afrage, welche überprüft ob <code>i</code> eine gerade Zahl ist (<code>i % 2 === 0</code>), iniziiert.
+                <ol>
+                  <li>Falls <code>i</code> gerade ist, speichere die Zeichen für das Raster (in dieser Reihe) mit einer weiteren <code>for</code>-Schleife und <code>if/else</code>-Abfrage in <code>result</code>. Hier soll zuerst ein Leerzeichen (<code>' '</code>) und dann eine Raute (<code>'#'</code>) ausgegeben werden.</li>
+                  <li>Andernfalls, speichere die Zeichen für das Raster (in dieser Reihe) mit einer weiteren <code>for</code>-Schleife und <code>if/else</code>-Abfrage in <code>result</code>. Hier soll zuerst eine Raute (<code>'#'</code>) und dann ein Leerzeichen (<code>' '</code>) ausgegeben werden.</li>
+                </ol>
+              </li>
+              <li>Gib <code>result</code> in der Konsole aus.</li>
+            </ol>
+            <p><a class="btn" href="assets/ej/ej-ch02_chess-board.html"><i class="fa fa-code" aria-hidden="true"></i>ej-ch02_chess-board.html</a></p>
+
+
+            <h3>Funktionen machen das Leben um einiges einfacher</h3>
+            <p>Das dritte Kapitel <a href="http://eloquentjavascript.net/03_functions.html" target="_blank">„Functions“</a> beschäftigt sich mit dem einsetzen von Funktionen in Javascript. Drei Übungsaufgaben dazu sahen dementsprechend so aus:</p>
+
+            <h4>Minimum</h4>
+            <p>Hier soll mit Hilfe einer Funktion die <a href="http://eloquentjavascript.net/03_functions.html#h_XTmO7z7MPq" target="_blank">kleinste von zwei Zahlen</a> in der Konsole ausgegeben werden:</p>
+            <pre>
+&lt;script type="text/javascript" charset="utf-8"&gt;
+
+    function min(x, y) {
+      if (x > y) {
+        return y;
+      } else {
+        return x;
+      }
+    }
+
+    console.log(min(6, -2));
+
+&lt;/script&gt;
+            </pre>
+            <p><a class="btn" href="assets/ej/ej-ch03_minimum.html"><i class="fa fa-code" aria-hidden="true"></i>ej-ch03_minimum.html</a></p>
+
+
+            <h4>Recursion</h4>
+            <p>Bei dieser Übung soll rekursiv mit einer Funktion ermittelt werden ob eine <a href="http://eloquentjavascript.net/03_functions.html#h_XTmO7z7MPq" target="_blank">Zahl gerade ist oder nicht</a>. Die Funktion soll auch zusätzlich mit negativen Zahlen umgehen können:</p>
+            <pre>
+&lt;script type="text/javascript" charset="utf-8"&gt;
+
+  function isEven(n) {
+    // Nur absolute (positive) Zahlen mit Math.abs(n)
+    n = Math.abs(n);
+
+    if (n === 0) {
+      return true;
+    } else if (n === 1) {
+      return false;
+    } else {
+      return isEven(n % 2);
+    }
+  }
+
+  console.log(isEven(-75));
+
+&lt;/script&gt;
+            </pre>
+            <p><a class="btn" href="assets/ej/ej-ch03_recursion.html"><i class="fa fa-code" aria-hidden="true"></i>ej-ch03_recursion.html</a></p>
+
+
+            <h4>Bean counting</h4>
+            <p>Hierfür sollen zwei Funktionen programmiert werden. Einmal soll mit der Funktion <code>countBs(string)</code> ermittelt werden wie oft der Buchstabe <code>B</code> in einem String auftaucht.</p>
+            <p>Die andere Funktion <code>countChar(string, char)</code> soll dann das selbe tun mit dem kleinen Unterschied, dass man selbst den Buchstaben aussuchen kann.</p>
+            <pre>
+&lt;script type="text/javascript" charset="utf-8"&gt;
+
+  function countBs(string) {
+    var counter = 0;
+
+    for (var i = 0; i < string.length; i++) {
+      if (string.charAt(i) === 'B') {
+        counter++;
+      }
+    }
+
+    return counter;
+  }
+
+
+  function countChar(string, char) {
+    var counter = 0;
+
+    for (var i = 0; i < string.length; i++) {
+      if (string.charAt(i) === char) {
+        counter++;
+      }
+    }
+
+    return counter;
+  }
+
+
+  console.log(countBs('BBC'));
+
+  console.log(countChar('kakkerlak', 'k'));
+
+&lt;/script&gt;
+            </pre>
+            <p><a class="btn" href="assets/ej/ej-ch03_bean-counting.html"><i class="fa fa-code" aria-hidden="true"></i>ej-ch03_bean-counting.html</a></p>
+
+
+            <h3>But wait. There's more!</h3>
+            <p>Zusätzlich kam noch hinzu die mathematische Funktion Fakultät als Funktion in Javascript rekursiv und iterativ umzusetzen. Dabei kam dieser Code raus:</p>
+            <pre>
+&lt;script type="text/javascript" charset="utf-8"&gt;
+
+  // Iterativ
+  function fakIt(n) {
+    if (n < 2) {
+      return 1;
+    }
+    else {
+      var limit = n;
+
+      for (var k = 1; k <= (limit-1); k++) {
+        n *= k;
+      }
+
+      return n;
+    }
+  }
+
+  // Rekursiv
+  function fakRek(n) {
+    if (n < 2) {
+      return 1;
+    } else {
+      return n * fakRek(n-1);
+    }
+  }
+
+
+  console.log(fakIt(6));
+  console.log(fakRek(6));
+
+&lt;/script&gt;
+            </pre>
+            <p><a class="btn" href="assets/ej/fakultaet.html"><i class="fa fa-code" aria-hidden="true"></i>fakultaet.html</a></p>
+
+          </div>
+
+        </article>
+
+
+      </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="group">
+          <div class="txt span12">
+            <h4><a href="https://fhp.incom.org/workspace/6623" target="_blank">12FOId-AM Advanced Media: <br>Einführung in die Webentwicklung</a></h4>
+
+            <p><a href="http://www.fh-potsdam.de/" target="_blank">Fachhochschule Potsdam</a>
+            <br><a href="https://fhp.incom.org/profil/6531" target="_blank">Dozent: Matthias Graf</a></p>
+            <p><a href="https://fhp.incom.org/profil/7137" target="_blank">Dustin Kummer</a>
+            <br>Sommer 2016</p>
+            <a href="https://github.com/miduku/webentwicklung2016" target="_blank"><p>Sourcecode on <i class="fa fa-github"></i> Github</p></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/components/jquery/jquery.min.js"><\/script>');</script>
+    <script src="assets/js/scripts.min.js"></script>
+
+
+  </body>
+</html>

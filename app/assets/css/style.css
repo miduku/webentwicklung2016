@@ -458,6 +458,8 @@ nav ul {
   font-size: 0;
   border: 0;
   background: #000; }
+  .navToggle:focus, .navToggle:hover {
+    background-color: #f44336; }
   @media screen and (min-width: 768px) {
     .navToggle {
       width: 48px;
@@ -539,6 +541,8 @@ nav ul {
       display: inline-block; }
   .nav-main li {
     display: inline-block; }
+    .nav-main li:focus, .nav-main li:hover {
+      background-color: #f44336; }
     .nav-main li a {
       display: block;
       padding: 4px 8px; }
@@ -600,15 +604,19 @@ nav ul {
       .main img {
         margin-bottom: 20px; } }
   .main article {
-    margin-top: 120px; }
+    margin-top: 240px; }
     .main article:first-child {
       margin-top: 0; }
 
-figure {
+figure,
+.wide {
   margin-top: 40px;
   margin-right: 0;
   margin-bottom: 40px !important;
   margin-left: 0; }
+
+figure img {
+  border: 1px solid #e6e6e6; }
 
 .footer {
   text-align: center;
@@ -771,6 +779,12 @@ h5 {
   h4, time +
   h5 {
     margin-top: 0; }
+  h1 .chapter-nr,
+  h2 .chapter-nr,
+  h3 .chapter-nr,
+  h4 .chapter-nr,
+  h5 .chapter-nr {
+    color: #737373; }
 
 h1 {
   font-size: 3.25em;
@@ -787,20 +801,20 @@ h2 {
 h3 {
   font-size: 1.625em;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   margin: 60px 0 25px; }
 
 h4 {
-  font-size: 1.125em;
+  font-size: 1.35em;
   font-style: normal;
   font-weight: 700;
-  margin: 60px 0 25px; }
+  margin: 40px 0 25px; }
 
 h5 {
-  font-size: 1em;
+  font-size: 1.2em;
   font-style: normal;
   font-weight: 700;
-  margin: 60px 0 25px; }
+  margin: 40px 0 25px; }
 
 p {
   margin: 0 0 20px; }
@@ -812,7 +826,7 @@ pre {
   background: #212c31;
   color: #fff;
   display: block;
-  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-family: Monaco, Menlo, Consolas, Courier, "Courier New", monospace;
   font-size: .813em;
   line-height: 20px;
   margin: 0 0 20px;
@@ -824,7 +838,7 @@ code {
   border-radius: 4px;
   background: #f7f7f7;
   border: 1px solid #c4c4c4;
-  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-family: Monaco, Menlo, Consolas, Courier, "Courier New", monospace;
   font-size: .813em;
   line-height: 1.62;
   padding: 2px 5px;

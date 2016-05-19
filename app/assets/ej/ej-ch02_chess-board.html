@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>chess board</title>
+	<script type="text/javascript" charset="utf-8">
+
+		var result = '';
+		var size = 8;
+
+		for (var i = 1; i <= size; i++) {
+			// row B
+			if (i % 2 === 0) {
+				for (var j = 1; j <= size; j++) {
+					if (j % 2 === 0) {
+						result += ' ';
+					}
+					else {
+						result += '#';
+					}
+				}
+				// new line
+				result += '\n';
+			}
+
+			// row A
+			else {
+				for (var j = 1; j <= size; j++) {
+					if (j % 2 === 0) {
+						result += '#';
+					}
+					else {
+						result += ' ';
+					}
+				}
+				// new line
+				result += '\n';
+			}
+		} // END for
+		
+		console.log(result);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
