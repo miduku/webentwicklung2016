@@ -33,6 +33,11 @@ nav {
     border: 0;
     background: #000;
 
+    &:focus,
+    &:hover {
+      background-color: $red;
+    }
+
     @include mobilefirst($bp-tablet) {
       width: $buttonSizeTablet;
       height: $buttonSizeTablet;
@@ -139,6 +144,11 @@ nav {
 
         li {
           display: inline-block;
+
+          &:focus,
+          &:hover {
+            background-color: $red;
+          }
 
           a {
             display: block;

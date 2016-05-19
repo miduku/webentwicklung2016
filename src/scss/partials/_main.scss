@@ -20,7 +20,7 @@
 
 
   article {
-    margin-top: $padding*3;
+    margin-top: $padding*6;
     // @extend .group;
 
     &:first-child {
@@ -35,10 +35,15 @@
     }
 
 }
-  figure {
+  figure,
+  .wide {
     margin-top: $padding;
     margin-right: 0;
     margin-bottom: $padding !important;
     margin-left: 0;
     // @extend .span12;
   }
+
+    figure img {
+      border: 1px solid lighten($text-black, 70);
+    }

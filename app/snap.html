@@ -22,8 +22,9 @@
         <div class="container">
           <nav class="nav nav-main" role="navigation">
             <ul>
-              <li><a href="index.html">Einführung in die Webentwicklung 2016</a></li>
-              <li class="active"><a href="snap.html">Oh Snap!</a></li>
+              <li><a href="index.html">00. Einführung in die Webentwicklung 2016</a></li>
+              <li class="active"><a href="snap.html">01. Oh Snap!</a></li>
+              <li><a href="javascript.html">02. Javascript Ahoi</a></li>
             </ul>
           </nav>
         </div>
@@ -31,7 +32,7 @@
 
       <div class="title-wrapper">
         <div class="container">
-          <h1>Oh Snap!</h1>
+          <h1><span class="chapter-nr">01.</span> Oh Snap!</h1>
 
           <span class="title-info">Erfahrungen mit der Snap! Programmiersprache</span>
         </div>
@@ -40,6 +41,80 @@
 
     <main class="main" role="main">
       <div class="container">
+
+        <!-- ARTICLE -->
+        <article>
+          <div class="txt">
+            <time datetime="2016-05-05"><i class="fa fa-calendar-o" aria-hidden="true"></i>05.05.2016</time>
+            <h2>Recursion, we must go deeper!</h2>
+          </div>
+
+          <div class="txt">
+            <h3>Bäume und Schneeflocken</h3>
+            <p>Diese Woche haben wir uns mit Rekursion befasst und die folgenden <a href="http://bjc.berkeley.edu/bjc-r/topic/topic.html?topic=berkeley_bjc/recur/recursion-trees-fractals.topic&course=cs10_fa15.html&noassignment&noreading&novideo" target="_blank">Übungen</a> aufbekommen. Hier musste man versuchen durch Rekursion Baum- und Schneeflockenartige Formen zu realisieren, was nicht einfach war.</p>
+            <p>Zusätzlich sollte die mathematische Funktion <a href="https://de.wikipedia.org/wiki/Fakult%C3%A4t_%28Mathematik%29" target="_blank">Fakultät</a> iterativ und rekursiv programmiert werden.</p>
+            <p>Es gilt also:
+            <br>
+              <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>!</mo><mo>=</mo><mn>1</mn><mo>&#x000B7;</mo><mn>2</mn><mo>&#x000B7;</mo><mn>3</mn><mo>&#x000B7;</mo><mo>&#x02026;</mo><mo>&#x000B7;</mo><mi>n</mi><mo>=</mo><munderover><mo>&#x0220F;</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>k</mi></math>
+            </p>
+            <p>Das selbe gilt auch rekursiv:
+            <br>
+              <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>!</mo><mo>=</mo><mfenced open="{" close=""><mtable columnspacing="1.4ex" columnalign="left"><mtr><mtd><mn>1</mn><mo>,</mo></mtd><mtd><mi>n</mi><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd><mi>n</mi><mo>&#x000B7;</mo><mo>(</mo><mi>n</mi><mo>-</mo><mn>1</mn><mo>)</mo><mo>!</mo><mo>,</mo></mtd><mtd><mi>n</mi><mo>&gt;</mo><mn>0</mn></mtd></mtr></mtable></mfenced></math>
+            </p>
+
+            <p>Hilfreich war dieses <a href="http://recursivedrawing.com/" target="_blank">Tool (Recursive Drawing)</a> um das Konzept der Rekusion visuell darzustellen.</p>
+          </div>
+
+          <figure>
+            <a href="assets/img/snap-recursion.png"><img src="assets/img/snap-recursion.png" alt=""></a>
+            <figcaption>Rekursion in Snap</figcaption>
+          </figure>
+
+          <div class="txt">
+            <p><a class="btn" href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=miduku&ProjectName=recursive" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i>recursion</a></p>
+
+            <h3>Tags & Transitions</h3>
+            <p>Wir sollten auch zusätzlich CSS Transitions und HTML5 Tags ausprobieren und in die Website einbinden.</p>
+            <p>Eine transition sieht man schon oben links am Hamburger-Menü: Wenn man darauf klicked verändert sich die Form. Ich habe den meinen Code (HTML, SCSS, jQuery) in CodePen hochgeladen, falls jemand sich das anschauen möchte.</p>
+          </div>
+
+          <div class="wide">
+            <p data-height="500" data-theme-id="light" data-slug-hash="KzbGqa" data-default-tab="css,result" data-user="miduku" data-embed-version="2" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/miduku/pen/KzbGqa/">hamburger-pirate</a> by Dustin K (<a href="http://codepen.io/miduku">@miduku</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+              <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+          </div>
+
+          <div class="txt">
+            <p>Den <code>&lt;math&gt;</code> tag habe ich oben für die mathematischen Funktionen verwendet. Mit Hilfe Dieser Website <a href="http://www.wiris.com/editor/demo/en/mathml-latex" target="_blank">http://www.wiris.com/editor/demo/en/mathml-latex</a> waren sie Gott sei Dank relativ einfach zu erstellen.</p>
+          </div>
+        </article>
+
+        <!-- ARTICLE -->
+        <article>
+          <div class="txt">
+            <time datetime="2016-05-01"><i class="fa fa-calendar-o" aria-hidden="true"></i>01.05.2016</time>
+            <h2>So Abstract</h2>
+          </div>
+
+          <div class="txt">
+            <h3>Abstraction, Testing and Tic-Tac-Toe</h3>
+            <p>Die nächsten Übungen zu <a href="http://bjc.berkeley.edu/bjc-r/topic/topic.html?topic=berkeley_bjc/intro_pair/4-abstraction-testing.topic&course=cs10_fa15.html&noassignment&noreading&novideo" target="_blank">Abstraktion und Testen</a> wurden bewältigt und eine Tic-Tac-Toe Spielfläche wurde mit mehreren Blöcken programmiert.</p>
+
+            <p><a class="btn" href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=miduku&ProjectName=abstraction-and-testing" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i>abstraction-and-testing</a></p>
+
+            <h3>"All in all it's just another brick in the wall"</h3>
+            <p>Die schwierigste Aufgabe war eine Mauer auf dem Canvas zu zeichnen. Hierfür sollte man auch die Möglichkeit haben Parameter für die Anzahl von Reihen oder die Dicke des Mörtels einzugeben.</p>
+          </div>
+
+          <figure>
+            <a href="assets/img/snap-brick-wall.png"><img src="assets/img/snap-brick-wall.png" alt=""></a>
+            <figcaption>Ziegelsteinmauer Zeichnen</figcaption>
+          </figure>
+
+          <div class="txt">
+            <p><a class="btn" href="http://snap.berkeley.edu/snapsource/snap.html#present:Username=miduku&ProjectName=brick-wall" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i>brick-wall</a></p>
+          </div>
+
+        </article>
 
         <!-- ARTICLE -->
         <article>
@@ -57,7 +132,7 @@
             <h3>Auto fahren</h3>
             <blockquote>
               <p> Ich habe den Algorithmus <a href="http://snap.mgrf.de/#open:./webdeck/matthias/snap/car4.xml" target="_blank">in diesem Projekt</a> implementiert. Verbessert das Programm so, dass die zurückgelegte Strecke minimal wird. Die beste Lösung küren wir nächste Woche. ;) Hier findet ihr die Strecke als <a href="http://snap.mgrf.de/webdeck/matthias/snap/Strecke.png" target="_blank">png</a>, als <a href="http://snap.mgrf.de/webdeck/matthias/snap/Strecke.svg" target="_blank">svg</a> und das <a href="http://snap.mgrf.de/webdeck/matthias/snap/Car.png" target="_blank">Auto</a>.</p>
-              <em>- Käpt'n</em>
+              <em>- Käpt’n Matthias Graf</em>
             </blockquote>
 
             <p>Hierfür habe ich mich von selbstfahrenden Autos inspirieren lassen die mit Sensoren wie <a href="https://de.wikipedia.org/wiki/Lidar" target="_blank">LiDAR</a> und einem Reglersystem autonom fahren können.</p>
