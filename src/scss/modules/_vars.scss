@@ -49,7 +49,7 @@ $black:       #000;
 
 
 // Project color variables
-$text-black: #333;
+$text-black: darken($blue-grey, 30%);
 $color-primary: $red;
 $color-secondary: complement($color-primary);
 $color-tertiary: $silver;

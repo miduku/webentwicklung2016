@@ -31,7 +31,7 @@ nav {
     height: $buttonSize;
     font-size: 0;
     border: 0;
-    background: #000;
+    background: darken($blue-grey, 30%);
 
     &:focus,
     &:hover {
@@ -137,7 +137,8 @@ nav {
         margin-bottom: $padding/2;
 
         .js & {
-          background: #000;
+          background: darken($blue-grey, 30%);
+          // background: #000;
           display: inline-block;
         }
       }
@@ -175,7 +176,8 @@ nav {
     .nav-title {
       position: absolute;
       display: none;
-      background: #000;
+      background: darken($blue-grey, 30%);
+      // background: #000;
       padding: 0 $dp*2 0 $dp;
       vertical-align: bottom;
       line-height: $buttonSize;
