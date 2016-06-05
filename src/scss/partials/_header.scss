@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  background: #000;
+  background: darken($blue-grey, 30%);
   color: #fff;
   padding: $padding/2 0 $padding;
   min-height: 100%;

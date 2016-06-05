@@ -1,0 +1,117 @@
+<!doctype html>
+<html class="no-js" lang="de">
+  <head>
+    <meta charset="utf-8">
+    <title>Einführung in die Webentwicklung 2016 - Javascript</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Projekt-Logbuch für den Kurs 'Einführung in die Webentwicklung' (Sommersemester 2016) an der Fachhochschule Potsdam">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="author" content="Dustin Kummer">
+    <link rel="author" href="https://github.com/miduku/">
+
+    <link href="assets/css/style.min.css" rel="stylesheet">
+
+    <script src="assets/components/modernizr/modernizr.js"></script>
+    <!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+  </head>
+  <body>
+
+    <header class="header" role="banner">
+      <div class="nav-wrapper">
+        <div class="container">
+          <nav class="nav nav-main" role="navigation">
+            <ul>
+              <li><a href="index.html">00. Einführung in die Webentwicklung 2016</a></li>
+              <li><a href="snap.html">01. Oh Snap!</a></li>
+              <li><a href="javascript.html">02. Javascript Ahoi</a></li>
+              <li class="active"><a href="projekt.html">03. Projekt: Data Shmup</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="title-wrapper">
+        <div class="container">
+          <h1><span class="chapter-nr">03.</span> Projekt: Data Shmup</h1>
+
+          <span class="title-info">All your data are belong to us</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main" role="main">
+      <div class="container">
+
+        <!-- ARTICLE -->
+        <article>
+          <div class="txt">
+            <time datetime="2016-05-06"><i class="fa fa-calendar-o" aria-hidden="true"></i>05.06.2016</time>
+            <h2>Projektbeschreibung</h2>
+          </div>
+
+          <div class="txt">
+            <p>Für das Webprojekt sollen wir, in einem Team aus zwei bis drei Personen, bis zum 06.06.2016 eine Idee finden was wir gerne umsetzen wollen.</p>
+            <blockquote>
+              <p>Ziel ist ein eigenständiges Webprojekt eurer Wahl zu erstellen, das ein interaktives System oder eine Datengraphik implementiert. [...] Die Nutzung von Bibliotheken und Frameworks ist natürlich erlaubt, aber am Ende muss eindeutig klar sein, welche Logik von euch kommt. Bitte Zweier- oder Dreierteams bilden! Beschreibt euer Projekt prägnant auf eurem Weblog oder einer separaten Projektseite bis nächsten Montag.</p>
+              <em> - Käpt’n Matthias Graf </em>
+            </blockquote>
+            <p>Das Projekt werde ich gemeinsam mit <a href="http://snap.mgrf.de/webdeck2016/edmundo/" target="_blank">Edmundo</a> umsetzen.</p>
+
+            <h3>Shoot 'em up + data?</h3>
+            <p>Wir haben uns entschieden ein interaktives System in Form eines Spiels umzusetzen, welches aus Daten eine Grafik darstellt. Es soll ein Spiel des Genres <a href="https://en.wikipedia.org/wiki/Shoot_'em_up" target="_blank"><em>Shoot 'em up</em></a> (auch  <em>Shmup</em> genannt) werden, genauer aus dem Sub-Genre <a href="http://www.google.com/images?q=bullet+hell" target="_blank"><em>bullet hell</em></a>.</p>
+            <p>Das Grundprinzip eines <em>Bullet Hell Shmups</em> ist es den Spieler mit unzähligen Projektilen, welche von gegnerischen Objekten geschossen werden, zu überwältigen. Der Spieler muss hier auch gleichzeitig zurückschießen um die Anzahl der Gegnern auf dem Bildschirm zu mindern, und natürlich um Punkte zu sammeln.</p>
+            <p>Ein wichtiger Bestandteil dieses Sub-Genres ist auch, dass jeder Gegner eines bestimmten Typs eine vordefinierte Anzahl von Projektilen in einem vordefiniertem Muster schießt. Endgegner, am Ende eines Levels, haben widerrum immer ein größeres Repertoire an verschiedenen Mustern die der Spieler geschickt ausweichen muss.</p>
+            <p>Hier einige Beipiele verschiedener Bullet Hell Shmups:</p>
+          </div>
+
+          <div class="group">
+            <figure class="span12">
+              <a href="https://i.kinja-img.com/gawker-media/image/upload/s--TrkrKoDi--/c_fill,fl_progressive,g_north,h_358,q_80,w_636/gejbttb4uhlfqkprp3fv.gif"><img src="https://i.kinja-img.com/gawker-media/image/upload/s--TrkrKoDi--/c_fill,fl_progressive,g_north,h_358,q_80,w_636/gejbttb4uhlfqkprp3fv.gif" alt=""></a>
+              <figcaption>Zenzizenzic (Bild: <a href="http://kotaku.com/zenzizenzic-is-a-mouthful-of-a-video-game-but-its-got-1583894986" target="_blank">Kotaku</a>)</figcaption>
+            </figure>
+
+            <figure class="span6">
+              <a href="https://www.freegameplanet.com/wp-content/uploads/2015/04/Jigoku-Kisetsukan.gif"><img src="https://www.freegameplanet.com/wp-content/uploads/2015/04/Jigoku-Kisetsukan.gif" alt=""></a>
+              <figcaption>Jigoku Kisetsukan (Bild: <a href="https://www.freegameplanet.com/jigoku-kisetsukan-full-game-download/" target="_blank">freegameplanet.com</a>)</figcaption>
+            </figure>
+
+            <figure class="span6">
+              <a href="https://www.destructoid.com/ul/288873-bullet-hell-shooter-meets-d-d-in-enter-the-gungeon/Dodgey.gif"><img src="https://www.destructoid.com/ul/288873-bullet-hell-shooter-meets-d-d-in-enter-the-gungeon/Dodgey.gif" alt=""></a>
+              <figcaption>Enter the Gungoen (Bild: <a href="https://www.destructoid.com/d-d-meets-bullet-hell-shooter-in-enter-the-gungeon-288873.phtml" target="_blank">Destructoid</a>)</figcaption>
+            </figure>
+          </div>
+
+          <div class="txt">
+            <p>Wir würden unser Spiel soweit programmieren wollen, dass nur ein Gegner (Endgegner) zu bekämpfen ist. Am Anfang des Spiels soll der Spieler entscheiden woher das Spiel die Daten nehmen soll um das Projektilmuster des Gegners zu generieren. Welche Daten genau genommen werden steht noch offen; Es wäre aber eine Idee beispielsweise die Tagesanzahl eines Twitter-Hashtags in einem bestimmten Zeitraum zu verwenden. Wurde hier der Hashtag sehr oft benutzt könnte das Muster komplexer und dichter werden.</p>
+            <p>Wärend man beim Gegner treffer landet verliert er dementsprechend auch Lebenspunkte. Die Anzahl dieser Lebenspunkte soll die Daten zusätzlich verändern, welches Einfluss auf das Muster nimmt. Somit bleibt das Muster nicht immer gleich. Wie das Muster dadurch genau verändert wird müssten wir jedoch genauer besprechen.</p>
+          </div>
+        </article>
+
+
+      </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="group">
+          <div class="txt span12">
+            <h4><a href="https://fhp.incom.org/workspace/6623" target="_blank">12FOId-AM Advanced Media: <br>Einführung in die Webentwicklung</a></h4>
+
+            <p><a href="http://www.fh-potsdam.de/" target="_blank">Fachhochschule Potsdam</a>
+            <br><a href="https://fhp.incom.org/profil/6531" target="_blank">Dozent: Matthias Graf</a></p>
+            <p><a href="https://fhp.incom.org/profil/7137" target="_blank">Dustin Kummer</a>
+            <br>Sommer 2016</p>
+            <a href="https://github.com/miduku/webentwicklung2016" target="_blank"><p>Sourcecode on <i class="fa fa-github"></i> Github</p></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/components/jquery/jquery.min.js"><\/script>');</script>
+    <script src="assets/js/scripts.min.js"></script>
+
+
+  </body>
+</html>

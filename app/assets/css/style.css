@@ -406,7 +406,7 @@ th {
 
 .header {
   position: relative;
-  background: #000;
+  background: #212c31;
   color: #fff;
   padding: 20px 0 40px;
   min-height: 100%;
@@ -457,7 +457,7 @@ nav ul {
   height: 32px;
   font-size: 0;
   border: 0;
-  background: #000; }
+  background: #212c31; }
   .navToggle:focus, .navToggle:hover {
     background-color: #f44336; }
   @media screen and (min-width: 768px) {
@@ -537,7 +537,7 @@ nav ul {
   .nav-main ul {
     margin-bottom: 20px; }
     .js .nav-main ul {
-      background: #000;
+      background: #212c31;
       display: inline-block; }
   .nav-main li {
     display: inline-block; }
@@ -557,7 +557,7 @@ nav ul {
 .nav-title {
   position: absolute;
   display: none;
-  background: #000;
+  background: #212c31;
   padding: 0 16px 0 8px;
   vertical-align: bottom;
   line-height: 32px;
@@ -616,7 +616,7 @@ figure,
   margin-left: 0; }
 
 figure img {
-  border: 1px solid #e6e6e6; }
+  border: 1px solid #d5dee2; }
 
 .footer {
   text-align: center;
@@ -710,7 +710,7 @@ input {
   font-style: normal;
   font-weight: 400;
   line-height: 1.8;
-  color: #333; }
+  color: #212c31; }
   @media screen and (min-width: 768px) {
     body,
     button,
@@ -784,7 +784,7 @@ h5 {
   h3 .chapter-nr,
   h4 .chapter-nr,
   h5 .chapter-nr {
-    color: #737373; }
+    color: #566f7c; }
 
 h1 {
   font-size: 3.25em;
@@ -795,7 +795,7 @@ h1 {
 h2 {
   font-size: 2.625em;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   margin: 60px 0 25px; }
 
 h3 {
@@ -805,7 +805,7 @@ h3 {
   margin: 60px 0 25px; }
 
 h4 {
-  font-size: 1.35em;
+  font-size: 1.25em;
   font-style: normal;
   font-weight: 700;
   margin: 40px 0 25px; }
@@ -813,7 +813,7 @@ h4 {
 h5 {
   font-size: 1.2em;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   margin: 40px 0 25px; }
 
 p {
@@ -822,7 +822,7 @@ p {
     font-size: 88.9%; }
 
 pre {
-  border-radius: 4px;
+  border-radius: 2px;
   background: #212c31;
   color: #fff;
   display: block;
@@ -835,7 +835,7 @@ pre {
   word-wrap: break-word; }
 
 code {
-  border-radius: 4px;
+  border-radius: 2px;
   background: #f7f7f7;
   border: 1px solid #c4c4c4;
   font-family: Monaco, Menlo, Consolas, Courier, "Courier New", monospace;
@@ -852,7 +852,7 @@ a {
   a:hover, a:focus {
     text-decoration: underline; }
   .footer a {
-    color: #333; }
+    color: #212c31; }
 
 hr {
   border: 0;
@@ -861,14 +861,14 @@ hr {
 
 time {
   font-size: .8em;
-  color: #737373; }
+  color: #566f7c; }
 
 .nav-main a {
   text-decoration: none; }
 
 figcaption {
   font-size: 88.9%;
-  color: #737373;
+  color: #566f7c;
   text-align: center;
   font-style: italic; }
 
