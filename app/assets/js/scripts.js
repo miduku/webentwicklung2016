@@ -6,11 +6,11 @@
  * @version 1.0.0
  * Copyright 2016. MIT licensed.
  */
-(function ($, window, document, undefined) {
+(function($, window, document, undefined) {
 
   'use strict';
 
-  $(function () {
+  $(function() {
     // create transparent bgr .hamburgerBgr
     $('body').prepend('<div class="hamburgerBgr"></div>');
 
@@ -37,9 +37,9 @@
             // .addClass('visible')
             .show('fast');
 
-            if ($(window).scrollTop() > $('.header').outerHeight()) {
-              $('.nav-title').addClass('visible');
-            }
+          if ($(window).scrollTop() > $('.header').outerHeight()) {
+            $('.nav-title').addClass('visible');
+          }
 
           $('.hamburgerBgr').removeClass('active');
         }
@@ -61,13 +61,13 @@
         if ($('.nav-main').hasClass('active')) {
           $(this).removeClass('active');
 
-        $('.nav-main')
-          .removeClass('active')
-          .children('ul')
-          .slideUp('fast')
-          .siblings('.nav-title')
-          // .addClass('visible')
-          .show('fast');
+          $('.nav-main')
+            .removeClass('active')
+            .children('ul')
+            .slideUp('fast')
+            .siblings('.nav-title')
+            // .addClass('visible')
+            .show('fast');
 
           if ($(window).scrollTop() > $('.header').outerHeight()) {
             $('.nav-title').addClass('visible');
@@ -85,8 +85,7 @@
         $('.nav-title')
           .addClass('visible')
           .show('fast');
-      }
-      else if (!$('.nav-main').hasClass('active') && !shouldBeVisible && isVisible) {
+      } else if (!$('.nav-main').hasClass('active') && !shouldBeVisible && isVisible) {
         isVisible = false;
         $('.nav-title')
           .hide('fast')
