@@ -16,7 +16,7 @@
     $('.nav-main > ul').hide();
     $('.nav-title').hide();
     $('body')
-      .on('click', '.navToggle', function(event) {
+      .on('click', '.navToggle, .open-hamburger', function(event) {
         event.preventDefault();
 
         // if active, close nav and shot nav-title
