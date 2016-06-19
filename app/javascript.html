@@ -135,6 +135,76 @@ function reverseArray(array) {
 console.log(reverseArray(arr));
             </pre>
             <p><a class="btn" href="assets/ej/ej-ch04_reversing-an-array.html"><i class="fa fa-code" aria-hidden="true"></i>ej-ch04_reversing-an-array.html</a></p>
+
+            <h4>Build A Table</h4>
+            <p>Zusätzlich kam noch hinzu <a href="http://eloquentjavascript.net/13_dom.html" target="_blank">Kapitel 13</a> über das DOM (Document Object Model) zu lesen und die erste Aufgabe <em><a href="http://eloquentjavascript.net/13_dom.html#h_g/5UC3zznV" target="_blank">Build A Table</a></em> umzusetzen.</p>
+            <p>Um ehrlich zu sein habe ich meiner Meinung nach viel zu viel Zeit für diese Aufgabe gebraucht und bin auch nicht all zu zufrieden mit meiner Umsetzung; Das Kapitel hat vieles über DOM-Manipulation erklärt aber ich musste trotzdem viel nachrecherchieren und ausprobierren bis ich geschafft habe eine Tabelle zu generieren.</p>
+            <p>Ich verstehe auch jetzt warum es viele Javascript Bibliotheken wie <a href="https://jquery.com/" target="_blank">jQuery</a> und ähnliche existieren um diese fummelige Angelegenheit zu vereinfachen.</p>
+            <pre>
+/**
+ * Chapter 13
+ * Build A Table
+ */
+
+// add event listener so that document.body isn't null
+document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+
+  var MOUNTAINS = [
+    {name: "Kilimanjaro", height: 5895, country: "Tanzania"},
+    {name: "Everest", height: 8848, country: "Nepal"},
+    {name: "Mount Fuji", height: 3776, country: "Japan"},
+    {name: "Mont Blanc", height: 4808, country: "Italy/France"},
+    {name: "Vaalserberg", height: 323, country: "Netherlands"},
+    {name: "Denali", height: 6168, country: "United States"},
+    {name: "Popocatepetl", height: 5465, country: "Mexico"}
+  ];
+
+
+
+  function buildTable(array) {
+    var table  = document.createElement('table');
+
+    var names     = [],
+        heights   = [],
+        countries = [];
+
+    var rowsAmount   = array.length;
+    var thArray      = Object.keys(array[0]);
+    var columnAmount = thArray.length;
+
+
+    // create <tr> for <th>
+    var tr = document.createElement('tr');
+    var tableTr0 = table.appendChild(tr);
+
+      for (var t = 0; t < columnAmount; t++) {
+        var th = document.createElement('th');
+        var tableTrTh = tableTr0.appendChild(th);
+            tableTrTh.textContent = thArray[t];
+      }
+
+    // create normal <tr>
+    for (var i = 0; i < rowsAmount; i++) {
+      var tr = document.createElement('tr');
+      var tableTr = table.appendChild(tr);
+
+      // create <td>
+      for (var j = 0; j < columnAmount; j++) {
+        var td = document.createElement('td');
+        var tableTrTd = tableTr.appendChild(td);
+            tableTrTd.textContent = MOUNTAINS[i][thArray[j]];
+      }
+
+    }
+
+    return table;
+  }
+
+  document.body.appendChild(buildTable(MOUNTAINS));
+});
+            </pre>
+            <p><a class="btn" href="assets/ej/ej-ch13_build_a_table.html"><i class="fa fa-code" aria-hidden="true"></i>ej-ch13_build_a_table.html</a></p>
           </div>
         </article>
 
