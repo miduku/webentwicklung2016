@@ -46,6 +46,171 @@
         <!-- ARTICLE -->
         <article>
           <div class="txt">
+            <time datetime="2016-06-13"><i class="fa fa-calendar-o" aria-hidden="true"></i>13.06.2016</time>
+            <h2>So... weiter</h2>
+          </div>
+
+          <div class="txt">
+            <p>Hier hat sich seit dem letzten Eintrag nicht viel getan da ich arbeitstechnisch viel zu tun hatte und zwischendurch auch aus gesundheitlichen Gründen meine Konzentrationsspanne etwas limitiert war.</p>
+            <p>Nichts desto trotz versuche ich hier einige Aufgaben der letzten Kapitel von <a href="http://eloquentjavascript.net/" target="_blank">Eloquent Javascript</a> einzutragen.</p>
+
+            <h3>Objects and Arrays</h3>
+            <p>Im vierten Kapitel <a href="http://eloquentjavascript.net/04_data.html" target="_blank">Data Structures: Objects and Arrays</a> haben wir über Arrays und Objekts gelernt und welche Unterschiede und Anwendungsbereiche sie haben.</p>
+            <p>Hierzu habe ich folgende Aufgaben gemacht:</p>
+
+            <h4>The sum of a range</h4>
+            <p><a href="http://eloquentjavascript.net/04_data.html#h_8ZspxiCEC/" target="_blank">Hier</a> sollen prinzipiell zwei Funktionen geschrieben werden: Einmal soll mit <code>range()</code> ein Array gebildet werden und mit <code>sum()</code> einträge eines Arrays zusammenaddiert werden.</p>
+            <pre>
+/**
+ * Chapter 04
+ * The sum of a range
+ */
+
+'use strict';
+
+// range
+function range(n, m, steps) {
+  var output = [];
+
+  if (typeof steps === 'undefined') {
+    steps = 1;
+  }
+
+  if (n < m) {
+    for (var i = n; i <= m; i+=steps) {
+      output.push(i);
+    }
+  } else {
+    for (var i = n; i >= m; i-=steps) {
+      output.push(i);
+    }
+  }
+
+  return output;
+}
+
+console.log(range(1, 10));
+console.log(range(1, 10, 2));
+console.log(range(5, 0, 2));
+
+
+
+// sum
+function sum(array) {
+  var output = 0;
+
+  for (var i = 0; i < array.length; i++) {
+    output += array[i];
+  }
+
+  return output;
+}
+
+console.log(sum(range(1, 10)));
+            </pre>
+            <p><a class="btn" href="assets/ej/ej-ch04_the-sum-of-a-range.html"><i class="fa fa-code" aria-hidden="true"></i>ej-ch04_the-sum-of-a-range.html</a></p>
+
+            <h4>Reversing an array</h4>
+            <p>Bei <a href="http://eloquentjavascript.net/04_data.html#h_6xTmjj4Rf5" target="_blank">dieser Übung</a> soll die Reihenfolge eines Arrays umgedreht werden. Es gibt mehrere Möglichkeiten dies zu tun und sogar eine in JS eingebaute Methode namens <code>reverse</code> (<code>array.reverse();</code>), welches wir jedoch in dieser Aufgabe nicht benutzen dürfen. Ich habe hier nur ein Funktion geschafft:</p>
+            <pre>
+/**
+ * Chapter 04
+ * Reversing an array
+ */
+
+'use strict';
+
+var arr = [0,1,2,3,4,5];
+
+function reverseArray(array) {
+  var output = [];
+
+  for (var i = 0; i < array.length; i++) {
+    output.unshift(array[i]);
+  }
+
+  return output;
+}
+
+console.log(reverseArray(arr));
+            </pre>
+            <p><a class="btn" href="assets/ej/ej-ch04_reversing-an-array.html"><i class="fa fa-code" aria-hidden="true"></i>ej-ch04_reversing-an-array.html</a></p>
+
+            <h4>Build A Table</h4>
+            <p>Zusätzlich kam noch hinzu <a href="http://eloquentjavascript.net/13_dom.html" target="_blank">Kapitel 13</a> über das DOM (Document Object Model) zu lesen und die erste Aufgabe <em><a href="http://eloquentjavascript.net/13_dom.html#h_g/5UC3zznV" target="_blank">Build A Table</a></em> umzusetzen.</p>
+            <p>Um ehrlich zu sein habe ich meiner Meinung nach viel zu viel Zeit für diese Aufgabe gebraucht und bin auch nicht all zu zufrieden mit meiner Umsetzung; Das Kapitel hat vieles über DOM-Manipulation erklärt aber ich musste trotzdem viel nachrecherchieren und ausprobierren bis ich geschafft habe eine Tabelle zu generieren.</p>
+            <p>Ich verstehe auch jetzt warum es viele Javascript Bibliotheken wie <a href="https://jquery.com/" target="_blank">jQuery</a> und ähnliche existieren um diese fummelige Angelegenheit zu vereinfachen.</p>
+            <pre>
+/**
+ * Chapter 13
+ * Build A Table
+ */
+
+// add event listener so that document.body isn't null
+document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+
+  var MOUNTAINS = [
+    {name: "Kilimanjaro", height: 5895, country: "Tanzania"},
+    {name: "Everest", height: 8848, country: "Nepal"},
+    {name: "Mount Fuji", height: 3776, country: "Japan"},
+    {name: "Mont Blanc", height: 4808, country: "Italy/France"},
+    {name: "Vaalserberg", height: 323, country: "Netherlands"},
+    {name: "Denali", height: 6168, country: "United States"},
+    {name: "Popocatepetl", height: 5465, country: "Mexico"}
+  ];
+
+
+
+  function buildTable(array) {
+    var table  = document.createElement('table');
+
+    var names     = [],
+        heights   = [],
+        countries = [];
+
+    var rowsAmount   = array.length;
+    var thArray      = Object.keys(array[0]);
+    var columnAmount = thArray.length;
+
+
+    // create <tr> for <th>
+    var tr = document.createElement('tr');
+    var tableTr0 = table.appendChild(tr);
+
+      for (var t = 0; t < columnAmount; t++) {
+        var th = document.createElement('th');
+        var tableTrTh = tableTr0.appendChild(th);
+            tableTrTh.textContent = thArray[t];
+      }
+
+    // create normal <tr>
+    for (var i = 0; i < rowsAmount; i++) {
+      var tr = document.createElement('tr');
+      var tableTr = table.appendChild(tr);
+
+      // create <td>
+      for (var j = 0; j < columnAmount; j++) {
+        var td = document.createElement('td');
+        var tableTrTd = tableTr.appendChild(td);
+            tableTrTd.textContent = MOUNTAINS[i][thArray[j]];
+      }
+
+    }
+
+    return table;
+  }
+
+  document.body.appendChild(buildTable(MOUNTAINS));
+});
+            </pre>
+            <p><a class="btn" href="assets/ej/ej-ch13_build_a_table.html"><i class="fa fa-code" aria-hidden="true"></i>ej-ch13_build_a_table.html</a></p>
+          </div>
+        </article>
+
+        <!-- ARTICLE -->
+        <article>
+          <div class="txt">
             <time datetime="2016-05-19"><i class="fa fa-calendar-o" aria-hidden="true"></i>19.05.2016</time>
             <h2>OMG! JS!</h2>
           </div>
